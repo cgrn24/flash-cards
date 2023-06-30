@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 import s from './typography.module.scss'
 
@@ -16,8 +16,9 @@ type Props = {
     | 'overline'
     | 'link1'
     | 'link2'
+  children: ReactNode
 }
 
-export const Typography: FC<Props> = ({ type = 'body1' }) => {
-  return <div className={`${s}.${type}`}>typography</div>
+export const Typography: FC<Props> = ({ type = 'body1', children }) => {
+  return <div className={`${s}.${type}`}>{children}</div>
 }
