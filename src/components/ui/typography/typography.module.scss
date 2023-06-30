@@ -1,0 +1,61 @@
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  margin: 0;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+
+  color: var(--color-dark-900);
+}
+
+.large {
+  @include typography(--font-size-xxl, --line-height-l, --font-weight-bold);
+}
+.h1 {
+  @include typography(--font-size-xl, --line-height-m, --font-weight-bold);
+}
+.h2 {
+  @include typography(--font-size-l, --line-height-m, --font-weight-bold);
+}
+.h3 {
+  @include typography(--font-size-m, --line-height-m, --font-weight-bold);
+}
+.body1 {
+  @include typography(--font-size-m, --line-height-m, --font-weight-regular);
+}
+.body2 {
+  @include typography(--font-size-s, --line-height-m, --font-weight-regular);
+}
+.subtitle1 {
+  @include typography(--font-size-m, --line-height-m, --font-weight-bold);
+}
+.subtitle2 {
+  @include typography(--font-size-s, --line-height-l, --font-weight-bold);
+}
+.caption {
+  @include typography(--font-size-s, --line-height-s, --font-weight-regular);
+}
+.overline {
+  @include typography(--font-size-xs, --line-height-s, --font-weight-bold);
+}
+.link1 {
+  @include typography(--font-size-s, --line-height-m, --font-weight-regular);
+  cursor: pointer;
+  color: var(--color-info-500);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+.link2 {
+  @include typography(--font-size-xs, --line-height-s, --font-weight-regular);
+  cursor: pointer;
+  color: var(--color-info-500);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
