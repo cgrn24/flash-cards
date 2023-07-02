@@ -1,9 +1,12 @@
-import { FC, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+
+import { clsx } from 'clsx'
 
 import s from './typography.module.scss'
 
-type Props = {
-  type:
+type Props<T extends ElementType> = {
+  as?: T
+  variant?:
     | 'large'
     | 'h1'
     | 'h2'
@@ -16,9 +19,16 @@ type Props = {
     | 'overline'
     | 'link1'
     | 'link2'
-  children: ReactNode
+  children?: ReactNode
+  className?: string
 }
 
-export const Typography: FC<Props> = ({ type = 'body1', children }) => {
-  return <div className={`${s}.${type}`}>{children}</div>
+export const Typography = <T extends ElementType>(
+  props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>
+) => {
+  const { variant = 'body1', as, className, ...restProps } = props
+  const classNames = clsx(s[variant], className)
+  const Component = as || 'p'
+
+  return <Component className={classNames} {...restProps} />
 }
