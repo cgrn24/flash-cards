@@ -59,3 +59,7 @@
     text-decoration: none;
   }
 }
+.error {
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
+  color: var(--color-danger-300);
+}
