@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from './'
+import button from './button'
 
 const meta = {
   title: 'Components/Button',
-  component: Button,
+  component: button,
   tags: ['autodocs'],
   argTypes: {
     variant: {
@@ -12,7 +12,7 @@ const meta = {
       control: { type: 'radio' },
     },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof button>
 
 export default meta
 type Story = StoryObj<typeof meta>
