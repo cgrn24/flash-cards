@@ -1,0 +1,13 @@
+.header {
+  width: 1280px;
+  height: 60px;
+  background-color: var(--dark-700);
+  border-bottom: 1px solid var(--dark-500);
+  .container {
+    width: 1008px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
