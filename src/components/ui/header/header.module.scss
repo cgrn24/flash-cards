@@ -1,3 +1,10 @@
+button {
+  all: unset;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
 .header {
   width: 1280px;
   height: 60px;
@@ -9,5 +16,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    .dropdownContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      .dropdownItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        .itemText {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .emailText {
+            color: var(--color-dark-100);
+          }
+        }
+      }
+    }
   }
+}
+.typographyDecorator {
+  border-bottom: dashed 1px;
 }

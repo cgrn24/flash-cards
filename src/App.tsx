@@ -1,9 +1,9 @@
-import { Typography } from './components/ui/typography'
+import { Header } from './components/ui/header/header'
 
 export function App() {
   return (
     <div>
-      <Typography variant="h1">Говно жопа</Typography>
+      <Header loggedIn={true} />
     </div>
   )
 }
