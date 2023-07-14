@@ -6,17 +6,19 @@ import { TextField } from '..'
 
 import s from './slider.module.scss'
 
-export type SliderType = {
+type Props = SliderType & Omit<Slider.SliderProps, keyof SliderType>
+
+type SliderType = {
   value: number[]
   onChange: (value: number[]) => void
   max: number
   min: number
 }
 
-export const RangeSlider: FC<SliderType> = ({ value, onChange, max, min }) => {
+export const RangeSlider: FC<Props> = ({ value, onChange, max, min }) => {
   return (
-    <div>
-      <TextField type="number" max={max} min={min} />
+    <div className={s.container}>
+      <TextField type="number" max={max} min={min} className={s.input} value={value[0]} readOnly />
       <Slider.Root
         defaultValue={value}
         minStepsBetweenThumbs={1}
@@ -31,7 +33,7 @@ export const RangeSlider: FC<SliderType> = ({ value, onChange, max, min }) => {
         <Slider.Thumb className={s.sliderThumb} />
         <Slider.Thumb className={s.sliderThumb} />
       </Slider.Root>
-      <TextField />
+      <TextField type="number" max={max} min={min} className={s.input} value={value[1]} readOnly />
     </div>
   )
 }
