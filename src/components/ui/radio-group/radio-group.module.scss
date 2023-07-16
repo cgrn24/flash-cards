@@ -19,18 +19,16 @@ button {
   border: 3px solid var(--color-accent-700);
 }
 .item:hover {
-  box-shadow: 8 8 var(--color-dark-500);
+  box-shadow: 0 0 0 8px var(--color-dark-500);
 }
-.item:focus {
-  box-shadow: 8 8 var(--color-dark-700);
-}
-
+// .item:focus-visible {
+//   box-shadow: 0 0 0 8px var(--color-dark-700);
+// }
+// todo - focus shadow
 .indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 8px;
-  height: 8px;
   position: relative;
 }
 .indicator::after {
