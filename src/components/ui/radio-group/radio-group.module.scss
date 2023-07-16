@@ -1,0 +1,53 @@
+button {
+  all: unset;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+.item {
+  background-color: var(--color-dark-900);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent-700);
+}
+.item:hover {
+  box-shadow: 8 8 var(--color-dark-500);
+}
+.item:focus {
+  box-shadow: 8 8 var(--color-dark-700);
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  position: relative;
+}
+.indicator::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent-700);
+}
+.indicatorDisabled {
+  background-color: var(--color-accent-900);
+}
+.text {
+  margin-left: 12px;
+}
+
+.textDisabled {
+  color: var(--color-light-900);
+}
