@@ -13,6 +13,7 @@ type SelectType = {
   items: string[]
   variant?: 'body1' | 'body2'
   placeholder?: string
+  className: string
   style?: React.CSSProperties
 }
 
@@ -25,6 +26,7 @@ export const Select: FC<Props> = ({
   placeholder,
   style,
   disabled,
+  className,
   ...restProps
 }) => {
   const seletItems = items.map((item, index) => {

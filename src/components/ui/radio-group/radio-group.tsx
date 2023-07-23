@@ -31,7 +31,7 @@ export const RadioGroup: FC<Props> = ({ values, disabled, ...restProps }) => {
 
   return (
     <form>
-      <RadioGroupLib.Root className={s.root} disabled={disabled}>
+      <RadioGroupLib.Root className={s.root} disabled={disabled} {...restProps}>
         {items}
       </RadioGroupLib.Root>
     </form>
