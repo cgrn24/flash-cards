@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { Card } from '..'
 import { Header } from '../header/header'
 
 import s from './page.module.scss'
@@ -12,7 +13,7 @@ export const Page: FC<Props> = ({ children }) => {
   return (
     <div className={s.page}>
       <Header loggedIn={true} />
-      {children}
+      <Card>{children}</Card>
     </div>
   )
 }
