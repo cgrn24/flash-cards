@@ -33,7 +33,7 @@ const schema = z
 
 type Form = z.infer<typeof schema>
 
-export const LoginForm = () => {
+export const SignupForm = () => {
   const {
     handleSubmit,
     control,
