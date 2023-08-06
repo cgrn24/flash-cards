@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import Avatar from '../../../assets/images/ava.png'
+import Avatar from '../../../assets/images/avabig.png'
 import { Card, Typography } from '../../ui'
 import Button from '../../ui/button/button.tsx'
 import { ControlledTextField } from '../../ui/controlled/controlled-text-field.tsx'
@@ -36,7 +36,7 @@ export const ChangeProfile = () => {
       <Typography variant="large" as={'h1'} className={s.title}>
         Create new password
       </Typography>
-      <img src={Avatar} />
+      <img src={Avatar} className={s.avatar} />
       <form onSubmit={onSubmit} className={s.form}>
         <ControlledTextField
           label="Nickname"
