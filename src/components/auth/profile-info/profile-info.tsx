@@ -10,15 +10,23 @@ export const ProfileInfo = () => {
       <Typography variant="large" as={'h1'} className={s.title}>
         Personal information
       </Typography>
-      <div className={s.avatarBlock}>
-        <img src={Avatar} className={s.avatar} />
-        <Button as={'a'} classname={s.avatarButton} />
+      <div className={s.avatarWrapper}>
+        <div className={s.avatarBlock}>
+          <img src={Avatar} className={s.avatar} />
+          <Button as={'a'} className={s.avatarButton} />
+        </div>
       </div>
-      <Typography variant="caption" as={'p'} className={s.caption}>
-        Create new password and we will send you further instructions to email
-      </Typography>
-      <Button type={'signup'} fullWidth className={s.button}>
-        Save changes
+      <div className={s.textWrapper}>
+        <div className={s.nameWrapper}>
+          <Typography variant="h1">Ivan</Typography>
+          <Button as={'a'} />
+        </div>
+        <Typography variant="caption" as={'p'} className={s.caption}>
+          j&johnson@gmail.com{' '}
+        </Typography>
+      </div>
+      <Button type={'secondary'} fullWidth className={s.button}>
+        Logout
       </Button>
     </Card>
   )

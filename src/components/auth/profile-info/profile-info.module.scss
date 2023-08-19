@@ -28,19 +28,30 @@
   margin-bottom: 35px;
 }
 
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .avatarBlock {
   position: relative;
   height: 96px;
   width: 96px;
 }
-.avatar {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
-}
 .avatarButton {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nameWrapper {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 5px;
 }
