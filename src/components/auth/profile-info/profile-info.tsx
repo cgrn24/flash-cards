@@ -1,3 +1,4 @@
+import { Edit, Logout } from '../../../assets/icons/index.ts'
 import Avatar from '../../../assets/images/avabig.png'
 import { Card, Typography } from '../../ui'
 import Button from '../../ui/button/button.tsx'
@@ -13,19 +14,25 @@ export const ProfileInfo = () => {
       <div className={s.avatarWrapper}>
         <div className={s.avatarBlock}>
           <img src={Avatar} className={s.avatar} />
-          <Button as={'a'} className={s.avatarButton} />
+          <Button variant={'secondary'} as={'a'} className={s.avatarButton}>
+            <Edit />
+          </Button>
         </div>
       </div>
       <div className={s.textWrapper}>
         <div className={s.nameWrapper}>
           <Typography variant="h1">Ivan</Typography>
-          <Button as={'a'} />
+          <label style={{ marginTop: '4px' }}>
+            <input type="file" style={{ display: 'none' }} />
+            <Edit />
+          </label>
         </div>
         <Typography variant="caption" as={'p'} className={s.caption}>
           j&johnson@gmail.com{' '}
         </Typography>
       </div>
-      <Button type={'secondary'} fullWidth className={s.button}>
+      <Button variant={'secondary'} fullWidth className={s.button}>
+        <Logout />
         Logout
       </Button>
     </Card>

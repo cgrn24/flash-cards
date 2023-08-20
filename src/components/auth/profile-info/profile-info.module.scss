@@ -44,6 +44,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  padding: 2px;
 }
 .textWrapper {
   display: flex;
@@ -51,7 +52,7 @@
   align-items: center;
 }
 .nameWrapper {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   gap: 5px;
 }
