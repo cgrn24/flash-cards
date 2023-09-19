@@ -25,7 +25,7 @@ type TabsProps = {
   onValueChange?: (value: string) => void
   /** Use TabsContent components as children. */
   children?: ReactNode
-  fullWidth: boolean
+  fullWidth?: boolean
 }
 
 export const Tabs: FC<TabsProps> = ({
