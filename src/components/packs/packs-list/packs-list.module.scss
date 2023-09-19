@@ -6,3 +6,16 @@
   display: flex;
   justify-content: space-between;
 }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 5px 5px;
+}
+
+.toolbarLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

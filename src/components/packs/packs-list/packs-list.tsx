@@ -18,10 +18,16 @@ export const PacksList = () => {
         <Typography variant="h1">Packs list</Typography>
         <Button>Add new pack</Button>
       </div>
-      <div>
+      <div className={s.toolbar}>
         <TextField placeholder={'Input search'} />
-        <Tabs tabs={tabs} />
-        <RangeSlider onChange={sliderHandler} value={[10, 90]} max={100} min={0} />
+        <div className={s.toolbarLabel}>
+          <Typography variant="body2">Show packs cards</Typography>
+          <Tabs tabs={tabs} />
+        </div>
+        <div className={s.toolbarLabel}>
+          <Typography variant="body2">Number of cards</Typography>
+          <RangeSlider onChange={sliderHandler} value={[10, 90]} max={100} min={0} />
+        </div>
         <Button variant={'secondary'}>Clear filter</Button>
       </div>
     </div>
