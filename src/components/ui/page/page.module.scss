@@ -1,9 +1,9 @@
 .page {
-  width: 100%;
-  padding-top: 96px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  padding-top: 96px;
 }

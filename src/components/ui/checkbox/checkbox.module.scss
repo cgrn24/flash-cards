@@ -4,9 +4,9 @@
 }
 
 .label {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &.disabled {
     color: var(--color-checkbox-disabled);

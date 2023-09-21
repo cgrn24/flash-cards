@@ -15,50 +15,51 @@
 
 .trigger {
   all: unset;
+
   cursor: pointer;
 
   position: relative;
 
   display: inline-flex;
-  padding: 6px 24px;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 
   width: 120px;
-
-  border-radius: 2px 0px 0px 2px;
-  border: 1px solid var(--color-dark-300);
+  padding: 6px 24px;
 
   font-weight: var(--font-weight-regular);
+
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px 0 0 2px;
 
   &.fullWidth {
     flex-grow: 1;
   }
 
   &:focus-visible {
-    border-radius: 2px;
-    border: 2px solid var(--color-info-900);
     background: var(--color-dark-700);
+    border: 2px solid var(--color-info-900);
+    border-radius: 2px;
   }
 
   &:hover {
-    border-radius: 2px;
-    border: 1px solid var(--color-dark-100);
     background: var(--color-dark-300);
+    border: 1px solid var(--color-dark-100);
+    border-radius: 2px;
   }
 
   &:active {
-    border-radius: 2px 0px 0px 2px;
-    border: 1px solid var(--color-primary-500);
     background: var(--color-primary-500);
+    border: 1px solid var(--color-primary-500);
+    border-radius: 2px 0 0 2px;
   }
 
   &:disabled {
     cursor: initial;
-    border-radius: 2px;
-    border: 1px solid var(--color-dark-300, #4c4c4c);
     background: var(--color-dark-700, #171717);
+    border: 1px solid var(--color-dark-300, #4c4c4c);
+    border-radius: 2px;
   }
 }
 

@@ -1,6 +1,6 @@
 .card {
-  max-width: 420px;
   width: 100%;
+  max-width: 420px;
   padding: 33px 36px 29px;
 }
 
@@ -8,12 +8,14 @@
   margin-bottom: 27px;
   text-align: center;
 }
+
 .text {
+  margin-bottom: 30px;
   color: var(--color-light-900);
   text-align: center;
   opacity: 0.5;
-  margin-bottom: 30px;
 }
+
 .signInLink {
   display: flex;
   justify-content: center;
