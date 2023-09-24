@@ -73,9 +73,5 @@ export type TabContentProps = {
 }
 
 export const TabContent: FC<TabContentProps> = ({ value, children }) => {
-  return (
-    <TabsRadixUI.Content className={s.content} value={value}>
-      {children}
-    </TabsRadixUI.Content>
-  )
+  return <TabsRadixUI.Content value={value}>{children}</TabsRadixUI.Content>
 }
