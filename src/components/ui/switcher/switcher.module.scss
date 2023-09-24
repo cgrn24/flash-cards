@@ -6,7 +6,7 @@
 .list {
   display: flex;
   flex-shrink: 0;
-  border-bottom: 2px solid var(--color-dark-500);
+  // border-bottom: 2px solid var(--color-dark-500);
 
   &.secondary {
     border-bottom: none;
@@ -61,4 +61,8 @@
     border: 1px solid var(--color-dark-300, #4c4c4c);
     border-radius: 2px;
   }
+}
+
+.content {
+  color: var(--color-dark-900);
 }
