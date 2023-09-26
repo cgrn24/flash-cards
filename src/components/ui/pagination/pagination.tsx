@@ -167,29 +167,29 @@ export type PerPageSelectProps = {
   onPerPageChange: (itemPerPage: number) => void
 }
 
-export const PerPageSelect: FC<PerPageSelectProps> = ({
-  // perPage,
-  perPageOptions,
-  // onPerPageChange,
-}) => {
-  // const selectOptions = perPageOptions.map(value => ({
-  //   label: value,
-  //   value,
-  // }))
+// export const PerPageSelect: FC<PerPageSelectProps> = ({
+//   perPage,
+//   perPageOptions,
+//   onPerPageChange,
+// }) => {
+//   const selectOptions = perPageOptions.map(value => ({
+//     label: value,
+//     value,
+//   }))
 
-  return null
-  // return (
-  //   <div className={classNames.selectBox}>
-  //     Показать
-  //     <Select
-  //       className={classNames.select}
-  //       value={perPage.toString()}
-  //       items={perPageOptions}
-  //       onChange={onPerPageChange}
-  //       variant="body2"
-  //       label={value}
-  //     />
-  //     на странице
-  //   </div>
-  // )
-}
+//   return null
+export const PerPageSelect: FC<PerPageSelectProps> = () => null
+// return (
+//   <div className={classNames.selectBox}>
+//     Показать
+//     <Select
+//       className={classNames.select}
+//       value={perPage.toString()}
+//       items={perPageOptions}
+//       onChange={onPerPageChange}
+//       variant="body2"
+//       label={value}
+//     />
+//     на странице
+//   </div>
+// )
