@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { clsx } from 'clsx'
 
 import { LeftArrow, RightArrow } from '../../../assets/icons'
-import { Select } from '../select/select'
+// import { Select } from '../select/select'
 
 import s from './pagination.module.scss'
 import { usePagination } from './usePagination'
@@ -168,14 +168,14 @@ export type PerPageSelectProps = {
 }
 
 export const PerPageSelect: FC<PerPageSelectProps> = ({
-  perPage,
+  // perPage,
   perPageOptions,
-  onPerPageChange,
+  // onPerPageChange,
 }) => {
-  const selectOptions = perPageOptions.map(value => ({
-    label: value,
-    value,
-  }))
+  // const selectOptions = perPageOptions.map(value => ({
+  //   label: value,
+  //   value,
+  // }))
 
   return null
   // return (

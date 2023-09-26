@@ -23,7 +23,7 @@ export const ChangeProfile = () => {
   const {
     handleSubmit,
     control,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<Form>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
