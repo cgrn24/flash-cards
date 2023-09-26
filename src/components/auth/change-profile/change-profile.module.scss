@@ -1,0 +1,36 @@
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 33px 36px 29px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.button {
+  margin-bottom: 20px;
+}
+
+.caption {
+  margin-bottom: 35px;
+  color: var(--color-light-900);
+  opacity: 0.5;
+}
+
+.avatar {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+}

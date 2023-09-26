@@ -1,0 +1,62 @@
+button {
+  all: unset;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.item {
+  width: 16px;
+  height: 16px;
+
+  background-color: var(--color-dark-900);
+  border: 3px solid var(--color-accent-700);
+  border-radius: 50%;
+}
+
+.item:hover {
+  box-shadow: 0 0 0 8px var(--color-dark-500);
+}
+
+// .item:focus-visible {
+//   box-shadow: 0 0 0 8px var(--color-dark-700);
+// }
+// todo - focus shadow
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator::after {
+  content: '';
+
+  display: block;
+
+  width: 8px;
+  height: 8px;
+
+  background-color: var(--color-accent-700);
+  border-radius: 50%;
+}
+
+.indicatorDisabled {
+  background-color: var(--color-accent-900);
+}
+
+.text {
+  margin-left: 12px;
+}
+
+.textDisabled {
+  color: var(--color-light-900);
+}

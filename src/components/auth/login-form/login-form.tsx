@@ -36,24 +36,22 @@ export const LoginForm = () => {
     mode: 'onSubmit',
   })
 
-  console.log(errors)
-
   const onSubmit = handleSubmit(data => console.log(data))
 
   return (
     <Card className={s.card}>
-      <Typography variant="large" as={'h1'}>
+      <Typography variant="large" as={'h1'} className={s.title}>
         Sign in
       </Typography>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className={s.form}>
         <ControlledTextField
-          label="login"
+          label="Email"
           name={'login'}
           control={control}
           containerProps={{ className: s.textField }}
         />
         <ControlledTextField
-          label="password"
+          label="Password"
           name={'password'}
           control={control}
           containerProps={{ className: s.textField }}
@@ -66,11 +64,11 @@ export const LoginForm = () => {
           position={'left'}
         />
 
-        <Typography variant="body2" as={'a'} className={s.forgotPassword}>
+        <Typography variant="body2" as={'a'} className={s.recoverPasswordLink}>
           Forgot password?
         </Typography>
 
-        <Button type={'submit'} fullWidth>
+        <Button type={'submit'} fullWidth className={s.button}>
           Submit
         </Button>
       </form>

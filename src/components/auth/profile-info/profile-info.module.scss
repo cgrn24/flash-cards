@@ -1,0 +1,61 @@
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 33px 36px 29px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.button {
+  margin-bottom: 20px;
+}
+
+.caption {
+  margin-bottom: 35px;
+  color: var(--color-light-900);
+  opacity: 0.5;
+}
+
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarBlock {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
+.avatarButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nameWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
