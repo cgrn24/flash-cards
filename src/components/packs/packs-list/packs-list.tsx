@@ -2,6 +2,7 @@ import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
+import { Table, TableHead, TableHeader } from '../../ui/table'
 
 import s from './packs-list.module.scss'
 
@@ -11,6 +12,14 @@ export const PacksList = () => {
     { title: 'All Cards', value: 'All Cards' },
   ]
   const sliderHandler = () => null
+
+  const columns = [
+    { key: 'name', title: 'Name', sortable: false },
+    { key: 'card', title: 'Cards', sortable: false },
+    { key: 'last', title: 'Last Updated', sortable: true },
+    { key: 'author', title: 'Created by', sortable: false },
+    { key: 'actions', title: '', sortable: false },
+  ]
 
   return (
     <div className={s.container}>
@@ -29,6 +38,11 @@ export const PacksList = () => {
           <RangeSlider onChange={sliderHandler} value={[10, 90]} max={100} min={0} />
         </div>
         <Button variant={'secondary'}>Clear filter</Button>
+      </div>
+      <div className={s.table}>
+        <Table>
+          <TableHeader columns={columns}></TableHeader>
+        </Table>
       </div>
     </div>
   )
