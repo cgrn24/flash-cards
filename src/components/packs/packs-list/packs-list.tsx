@@ -2,7 +2,7 @@ import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
-import { Table, TableHead, TableHeader } from '../../ui/table'
+import { Table, TableHeader } from '../../ui/table'
 
 import s from './packs-list.module.scss'
 
@@ -24,7 +24,7 @@ export const PacksList = () => {
   return (
     <div className={s.container}>
       <div className={s.header}>
-        <Typography variant="h1">Packs list</Typography>
+        <Typography variant="large">Packs list</Typography>
         <Button>Add new pack</Button>
       </div>
       <div className={s.toolbar}>
