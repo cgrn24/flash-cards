@@ -2,7 +2,7 @@ import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
-import { Table, TableHeader } from '../../ui/table'
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
 import s from './packs-list.module.scss'
 
@@ -42,6 +42,15 @@ export const PacksList = () => {
       <div className={s.table}>
         <Table>
           <TableHeader columns={columns}></TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>Pack Name</TableCell>
+              <TableCell>4</TableCell>
+              <TableCell>18.03.2023</TableCell>
+              <TableCell>Ivan Petrov</TableCell>
+              <TableCell>actions</TableCell>
+            </TableRow>
+          </TableBody>
         </Table>
       </div>
     </div>
