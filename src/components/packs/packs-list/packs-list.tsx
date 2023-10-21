@@ -1,3 +1,4 @@
+import { Edit, Play, Trash } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
@@ -48,7 +49,13 @@ export const PacksList = () => {
               <TableCell>4</TableCell>
               <TableCell>18.03.2023</TableCell>
               <TableCell>Ivan Petrov</TableCell>
-              <TableCell>actions</TableCell>
+              <TableCell className={s.actionsContainer}>
+                <div className={s.actions}>
+                  <Play />
+                  <Edit />
+                  <Trash />
+                </div>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
