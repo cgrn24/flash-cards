@@ -3,9 +3,9 @@ import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
-import s from './my-pack.module.scss'
+import s from './friends-pack.module.scss'
 
-export const MyPack = () => {
+export const FriendsPack = () => {
   const columns = [
     { key: 'question', title: 'Question', sortable: false },
     { key: 'answer', title: 'Answer', sortable: false },
@@ -24,7 +24,7 @@ export const MyPack = () => {
         </Typography>
       </div>
       <div className={s.header}>
-        <Typography variant="large">My pack</Typography>
+        <Typography variant="large">Friend&apos;s pack</Typography>
         <Button>Learn to Pack</Button>
       </div>
       <TextField placeholder={'Input search'} />
