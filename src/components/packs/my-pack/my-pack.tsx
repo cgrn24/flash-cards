@@ -1,4 +1,4 @@
-import { Star, StarEmpty } from '../../../assets/icons'
+import { ArrowBack, Star, StarEmpty } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
@@ -13,8 +13,16 @@ export const MyPack = () => {
     { key: 'grade', title: 'Grade', sortable: false },
   ]
 
+  // const navigate = useNavigate()
+
   return (
     <div className={s.container}>
+      <div className={s.back}>
+        <ArrowBack />
+        <Typography variant="body2" className={s.link}>
+          Back to Packs list
+        </Typography>
+      </div>
       <div className={s.header}>
         <Typography variant="large">Packs list</Typography>
         <Button>Learn to Pack</Button>

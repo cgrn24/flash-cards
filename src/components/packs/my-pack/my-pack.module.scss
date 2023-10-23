@@ -18,11 +18,13 @@
   margin-top: 24px;
 }
 
-.actionsContainer {
-  width: 127px;
+.back {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 33px;
 }
 
-.actions {
-  display: flex;
-  justify-content: space-between;
+.link {
+  margin-left: 6px;
 }
