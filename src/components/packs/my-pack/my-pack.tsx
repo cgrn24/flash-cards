@@ -1,4 +1,4 @@
-import { ArrowBack, Star, StarEmpty } from '../../../assets/icons'
+import { ArrowBack, Edit, Star, StarEmpty, Trash } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
@@ -11,6 +11,7 @@ export const MyPack = () => {
     { key: 'answer', title: 'Answer', sortable: false },
     { key: 'updated', title: 'Last Updated', sortable: true },
     { key: 'grade', title: 'Grade', sortable: false },
+    { key: 'actions', title: '', sortable: false },
   ]
 
   // const navigate = useNavigate()
@@ -42,6 +43,12 @@ export const MyPack = () => {
                 <Star />
                 <Star />
                 <StarEmpty />
+              </TableCell>
+              <TableCell>
+                <div className={s.actions}>
+                  <Edit />
+                  <Trash />
+                </div>
               </TableCell>
             </TableRow>
           </TableBody>
