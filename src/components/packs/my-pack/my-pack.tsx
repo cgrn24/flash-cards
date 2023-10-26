@@ -26,7 +26,7 @@ export const MyPack = () => {
       </div>
       <div className={s.header}>
         <Typography variant="large">My pack</Typography>
-        <Button>Learn to Pack</Button>
+        <Button>Add new card</Button>
       </div>
       <TextField placeholder={'Input search'} />
       <div className={s.table}>
