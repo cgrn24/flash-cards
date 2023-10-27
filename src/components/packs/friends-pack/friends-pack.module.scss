@@ -28,3 +28,14 @@
 .link {
   margin-left: 6px;
 }
+
+.ratingContainer {
+  width: 168px;
+}
+
+.rating {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 120px;
+}
