@@ -37,12 +37,14 @@ export const MyPack = () => {
               <TableCell>How &apos;this&apos; works in JavaScript?</TableCell>
               <TableCell>It works that way</TableCell>
               <TableCell>18.03.2023</TableCell>
-              <TableCell>
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <StarEmpty />
+              <TableCell className={s.ratingContainer}>
+                <div className={s.rating}>
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                  <StarEmpty />
+                </div>
               </TableCell>
               <TableCell>
                 <div className={s.actions}>
