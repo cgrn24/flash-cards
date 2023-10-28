@@ -1,0 +1,32 @@
+.container {
+  width: 1008px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 33px;
+}
+
+.link {
+  margin-left: 6px;
+}
+
+.emptypack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.text {
+  margin-bottom: 30px;
+  color: var(--color-dark-100);
+}
