@@ -13,16 +13,20 @@ export const LearnPack = () => {
           Back to Packs list
         </Typography>
       </div>
-      <Card className={s.card}>
-        <Typography variant="large">Learn &apos;Pack Name&apos;</Typography>
-        <Typography>
-          <b>Question:</b> How &apos;This&apos; works in JavaScript?
-        </Typography>
-        <Typography className={s.darkText}>
-          Количество попыток ответов на вопрос: <b>10</b>
-        </Typography>
-        <Button>Show answer</Button>
-      </Card>
+      <div className={s.cardContainer}>
+        <Card className={s.card}>
+          <Typography variant="large" className={s.headerText}>
+            Learn &apos;Pack Name&apos;
+          </Typography>
+          <Typography className={s.questionText}>
+            <b>Question:</b> How &apos;This&apos; works in JavaScript?
+          </Typography>
+          <Typography className={s.darkText}>
+            Количество попыток ответов на вопрос: <b>10</b>
+          </Typography>
+          <Button fullWidth>Show answer</Button>
+        </Card>
+      </div>
     </div>
   )
 }

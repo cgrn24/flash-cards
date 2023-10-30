@@ -19,6 +19,20 @@
   padding: 33px 36px 29px;
 }
 
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.headerText {
+  text-align: center;
+}
+
+.questionText {
+  margin-top: 45px;
+}
+
 .darkText {
+  margin-bottom: 41px;
   color: var(--color-dark-100);
 }
