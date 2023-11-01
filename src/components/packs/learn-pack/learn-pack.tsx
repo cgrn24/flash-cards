@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
 import { ArrowBack } from '../../../assets/icons'
+import { NewPack } from '../../modals/new-pack/new-pack'
 import { Card, Typography } from '../../ui'
 import Button from '../../ui/button/button'
+import { Modal } from '../../ui/modal/modal'
 import { RadioGroup } from '../../ui/radio-group/radio-group'
 
 import s from './learn-pack.module.scss'
@@ -13,11 +15,15 @@ export const LearnPack = () => {
 
   return (
     <div className={s.container}>
+      <Modal open={true} title="Add New Pack">
+        <NewPack />
+      </Modal>
       <div className={s.back}>
         <ArrowBack />
         <Typography variant="body2" className={s.link}>
           Back to Packs list
         </Typography>
+        M
       </div>
       <div className={s.cardContainer}>
         <Card className={s.card}>
