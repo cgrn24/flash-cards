@@ -23,7 +23,6 @@ export const LearnPack = () => {
         <Typography variant="body2" className={s.link}>
           Back to Packs list
         </Typography>
-        M
       </div>
       <div className={s.cardContainer}>
         <Card className={s.card}>
