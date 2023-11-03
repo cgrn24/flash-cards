@@ -2,9 +2,9 @@ import { TextField } from '../../ui'
 import Button from '../../ui/button/button'
 import { Select } from '../../ui/select/select'
 
-import s from './add-new-card.module.scss'
+import s from './edit-card.module.scss'
 
-export const AddNewCard = () => {
+export const EditCard = () => {
   const items = ['Text', 'Picture']
 
   return (
@@ -16,7 +16,7 @@ export const AddNewCard = () => {
       </div>
       <div className={s.buttonContainer}>
         <Button variant="secondary">Cancel</Button>
-        <Button>Add new card</Button>
+        <Button>Save changes</Button>
       </div>
     </div>
   )
