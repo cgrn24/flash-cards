@@ -6,6 +6,7 @@
 .list {
   display: flex;
   flex-shrink: 0;
+  /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
   // border-bottom: 2px solid var(--color-dark-500);
 
   &.secondary {
