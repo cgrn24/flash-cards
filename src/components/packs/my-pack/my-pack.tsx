@@ -1,11 +1,14 @@
+import { useState } from 'react'
+
 import { ArrowBack, Edit, Star, StarEmpty, Trash } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
+import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
 import s from './my-pack.module.scss'
 
 export const MyPack = () => {
+  const [sort, onSort] = useState<Sort>({ key: 'updated', direction: 'desc' })
   const columns = [
     { key: 'question', title: 'Question', sortable: false },
     { key: 'answer', title: 'Answer', sortable: false },
@@ -31,11 +34,31 @@ export const MyPack = () => {
       <TextField placeholder={'Input search'} />
       <div className={s.table}>
         <Table>
-          <TableHeader columns={columns}></TableHeader>
+          <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
           <TableBody>
             <TableRow>
               <TableCell>How &apos;this&apos; works in JavaScript?</TableCell>
               <TableCell>It works that way</TableCell>
+              <TableCell>18.03.2023</TableCell>
+              <TableCell className={s.ratingContainer}>
+                <div className={s.rating}>
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                  <StarEmpty />
+                </div>
+              </TableCell>
+              <TableCell>
+                <div className={s.actions}>
+                  <Edit />
+                  <Trash />
+                </div>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>How &apos;this&apos;</TableCell>
+              <TableCell>It works</TableCell>
               <TableCell>18.03.2023</TableCell>
               <TableCell className={s.ratingContainer}>
                 <div className={s.rating}>

@@ -1,9 +1,11 @@
+import { useState } from 'react'
+
 import { Edit, Play, Trash } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
+import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
 import s from './packs-list.module.scss'
 
@@ -13,6 +15,8 @@ export const PacksList = () => {
     { title: 'All Cards', value: 'All Cards' },
   ]
   const sliderHandler = () => null
+
+  const [sort, onSort] = useState<Sort>()
 
   const columns = [
     { key: 'name', title: 'Name', sortable: false },
@@ -42,7 +46,7 @@ export const PacksList = () => {
       </div>
       <div className={s.table}>
         <Table>
-          <TableHeader columns={columns}></TableHeader>
+          <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
           <TableBody>
             <TableRow>
               <TableCell>Pack Name</TableCell>

@@ -1,11 +1,15 @@
+import { useState } from 'react'
+
 import { ArrowBack, Star, StarEmpty } from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
+import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
 import s from './friends-pack.module.scss'
 
 export const FriendsPack = () => {
+  const [sort, onSort] = useState<Sort>({ key: 'updated', direction: 'desc' })
+
   const columns = [
     { key: 'question', title: 'Question', sortable: false },
     { key: 'answer', title: 'Answer', sortable: false },
@@ -30,7 +34,7 @@ export const FriendsPack = () => {
       <TextField placeholder={'Input search'} />
       <div className={s.table}>
         <Table>
-          <TableHeader columns={columns}></TableHeader>
+          <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
           <TableBody>
             <TableRow>
               <TableCell>How &apos;this&apos; works in JavaScript?</TableCell>
