@@ -33,7 +33,7 @@ export const PacksList = () => {
         <Button>Add new pack</Button>
       </div>
       <div className={s.toolbar}>
-        <TextField placeholder={'Input search'} />
+        <TextField placeholder={'Input search'} type="search" />
         <div className={s.toolbarLabel}>
           <Typography variant="body2">Show packs cards</Typography>
           <Tabs tabs={tabs} />

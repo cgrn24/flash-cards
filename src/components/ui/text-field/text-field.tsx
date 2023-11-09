@@ -2,7 +2,7 @@ import { ComponentProps, ComponentPropsWithoutRef, forwardRef, useState } from '
 
 import { clsx } from 'clsx'
 
-import { VisibilityOff, Eye } from '../../../assets/icons'
+import { VisibilityOff, Eye, Search } from '../../../assets/icons'
 import { Typography } from '../typography'
 
 import s from './text-field.module.scss'
@@ -28,7 +28,12 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const classNames = {
       root: clsx(s.root, containerProps?.className),
       fieldContainer: clsx(s.fieldContainer),
-      field: clsx(s.field, !!errorMessage && s.error, className),
+      field: clsx(
+        s.field,
+        type === 'search' && s.searchInput,
+        !!errorMessage && s.error,
+        className
+      ),
       label: clsx(s.label, labelProps?.className),
       error: clsx(s.error),
     }
@@ -56,6 +61,11 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             >
               {showPassword ? <VisibilityOff /> : <Eye />}
             </button>
+          )}
+          {type === 'search' && (
+            <div className={s.search}>
+              <Search />
+            </div>
           )}
         </div>
 
