@@ -1,11 +1,11 @@
-import { MyPack } from './components/packs/my-pack/my-pack'
+import { PacksList } from './components/packs/packs-list/packs-list'
 import { Page } from './components/ui/page/page'
 
 export function App() {
   return (
     <div>
       <Page>
-        <MyPack />
+        <PacksList />
       </Page>
     </div>
   )
