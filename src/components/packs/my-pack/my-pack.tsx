@@ -31,7 +31,7 @@ export const MyPack = () => {
         <Typography variant="large">My pack</Typography>
         <Button>Add new card</Button>
       </div>
-      <TextField placeholder={'Input search'} />
+      <TextField placeholder={'Input search'} type="search" />
       <div className={s.table}>
         <Table>
           <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
