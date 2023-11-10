@@ -31,7 +31,7 @@ export const FriendsPack = () => {
         <Typography variant="large">Friend&apos;s pack</Typography>
         <Button>Learn to Pack</Button>
       </div>
-      <TextField placeholder={'Input search'} />
+      <TextField placeholder={'Input search'} type="search" />
       <div className={s.table}>
         <Table>
           <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
