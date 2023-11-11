@@ -1,8 +1,18 @@
 import { useState } from 'react'
 
-import { ArrowBack, Edit, Star, StarEmpty, Trash } from '../../../assets/icons'
+import {
+  ArrowBack,
+  Edit,
+  EditPack,
+  More,
+  Play,
+  Star,
+  StarEmpty,
+  Trash,
+} from '../../../assets/icons'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
+import { Dropdown, DropdownItemWithIcon } from '../../ui/dropdown/dropdown'
 import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
 import s from './my-pack.module.scss'
@@ -28,7 +38,20 @@ export const MyPack = () => {
         </Typography>
       </div>
       <div className={s.header}>
-        <Typography variant="large">My pack</Typography>
+        <div className={s.headerMore}>
+          <Typography variant="large">My pack</Typography>
+          <Dropdown
+            trigger={
+              <button>
+                <More />
+              </button>
+            }
+          >
+            <DropdownItemWithIcon icon={<Play />} text="Learn" />
+            <DropdownItemWithIcon icon={<EditPack />} text="Edit" />
+            <DropdownItemWithIcon icon={<Trash />} text="Delete" />
+          </Dropdown>
+        </div>
         <Button>Add new card</Button>
       </div>
       <TextField placeholder={'Input search'} type="search" />
