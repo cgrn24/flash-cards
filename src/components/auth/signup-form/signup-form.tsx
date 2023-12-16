@@ -48,7 +48,7 @@ export const SignupForm = () => {
   return (
     <Card className={s.card}>
       <Typography variant="large" as={'h1'} className={s.title}>
-        Sign in
+        Sign up
       </Typography>
       <form onSubmit={onSubmit} className={s.form}>
         <ControlledTextField
@@ -79,7 +79,7 @@ export const SignupForm = () => {
       </Typography>
 
       <Typography as={'a'} href={'/sing-up'} className={s.signInLink}>
-        Sign Ip
+        Sign In
       </Typography>
     </Card>
   )
