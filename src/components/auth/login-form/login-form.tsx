@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -8,6 +10,10 @@ import { ControlledCheckbox } from '../../ui/controlled/controlled-checkbox.tsx'
 import { ControlledTextField } from '../../ui/controlled/controlled-text-field.tsx'
 
 import s from './login-form.module.scss'
+
+type Props = {
+  onSubmit: (data: FormType) => void
+}
 
 const schema = z.object({
   login: z.string().trim().nonempty('Enter login').min(3, 'Login must be at least 3 characters'),
@@ -24,26 +30,26 @@ const schema = z.object({
   email: z.string().trim().email('Invalid email address').nonempty('Enter email'),
 })
 
-type Form = z.infer<typeof schema>
+type FormType = z.infer<typeof schema>
 
-export const LoginForm = () => {
+export const LoginForm: FC<Props> = ({ onSubmit }) => {
   const {
     handleSubmit,
     control,
     // formState: { errors },
-  } = useForm<Form>({
+  } = useForm<FormType>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
   })
 
-  const onSubmit = handleSubmit(data => console.log(data))
+  const handleFormSubmit = handleSubmit(data => onSubmit(data))
 
   return (
     <Card className={s.card}>
       <Typography variant="large" as={'h1'} className={s.title}>
         Sign in
       </Typography>
-      <form onSubmit={onSubmit} className={s.form}>
+      <form onSubmit={handleFormSubmit} className={s.form}>
         <ControlledTextField
           label="Email"
           name={'login'}
