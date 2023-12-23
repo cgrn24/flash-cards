@@ -5,6 +5,7 @@ import { LoginArgs, User } from './auth.types'
 export const authService = baseApi.injectEndpoints({
   endpoints: builder => ({
     login: builder.mutation<void, LoginArgs>({
+      invalidatesTags: ['Me'],
       query: body => ({
         body,
         method: 'POST',
@@ -12,6 +13,7 @@ export const authService = baseApi.injectEndpoints({
       }),
     }),
     me: builder.query<User, void>({
+      providesTags: ['Me'],
       query: () => `v1/auth/me`,
     }),
   }),
