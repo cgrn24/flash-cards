@@ -9,6 +9,7 @@ import {
 import { NotFoundPage } from './pages/404/not-found-page'
 import { SingInPage } from './pages/sign-in-page/sing-in-page'
 import { SignUpPage } from './pages/sign-up-page/sign-up-page'
+import { useMeQuery } from './services/auth/auth.service'
 
 export const Router = () => {
   return <RouterProvider router={router} />
@@ -37,7 +38,11 @@ const privateRoutes: RouteObject[] = [
 ]
 
 function PrivateRoutes() {
-  const isAuthenticated = false
+  const { isError, isLoading } = useMeQuery()
+
+  if (isLoading) return
+
+  const isAuthenticated = !isError
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />
 }
