@@ -1,5 +1,8 @@
+import { FC } from 'react'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { omit } from 'remeda'
 import { z } from 'zod'
 
 import { Card, Typography } from '../../ui'
@@ -7,6 +10,10 @@ import Button from '../../ui/button/button.tsx'
 import { ControlledTextField } from '../../ui/controlled/controlled-text-field.tsx'
 
 import s from './signup-form.module.scss'
+
+type Props = {
+  handleSignup: (data: Omit<FormType, 'confirmPassword'>) => void
+}
 
 const schema = z
   .object({
@@ -31,19 +38,19 @@ const schema = z
     }
   })
 
-type Form = z.infer<typeof schema>
+type FormType = z.infer<typeof schema>
 
-export const SignupForm = () => {
+export const SignupForm: FC<Props> = ({ handleSignup }) => {
   const {
     handleSubmit,
     control,
     // formState: { errors },
-  } = useForm<Form>({
+  } = useForm<FormType>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
   })
 
-  const onSubmit = handleSubmit(data => console.log(data))
+  const onSubmit = handleSubmit(data => handleSignup(omit(data, ['confirmPassword'])))
 
   return (
     <Card className={s.card}>

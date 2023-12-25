@@ -1,6 +1,6 @@
 import { baseApi } from '../base-api'
 
-import { LoginArgs, User } from './auth.types'
+import { LoginArgs, RegisterArgs, User } from './auth.types'
 
 export const authService = baseApi.injectEndpoints({
   endpoints: builder => ({
@@ -16,7 +16,14 @@ export const authService = baseApi.injectEndpoints({
       providesTags: ['Me'],
       query: () => `v1/auth/me`,
     }),
+    register: builder.mutation<void, RegisterArgs>({
+      query: body => ({
+        body,
+        method: 'POST',
+        url: `v1/auth/sign-up`,
+      }),
+    }),
   }),
 })
 
-export const { useLoginMutation, useMeQuery } = authService
+export const { useLoginMutation, useMeQuery, useRegisterMutation } = authService
