@@ -13,3 +13,12 @@ export type User = {
   created: string
   updated: string
 }
+
+export type RegisterArgs = {
+  html?: string
+  name?: string
+  password: string
+  email: string
+  subject?: string
+  sendConfirmationEmail?: boolean
+}
