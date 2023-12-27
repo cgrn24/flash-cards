@@ -83,7 +83,7 @@ export const LoginForm: FC<Props> = ({ onSubmit }) => {
         Don't have an account?
       </Typography>
 
-      <Typography as={'a'} href={'/sing-up'} className={s.signUpLink}>
+      <Typography as={'a'} href={'/signup'} className={s.signUpLink}>
         Sign Up
       </Typography>
     </Card>

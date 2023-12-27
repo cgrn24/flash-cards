@@ -85,7 +85,7 @@ export const SignupForm: FC<Props> = ({ handleSignup }) => {
         Already have an account?
       </Typography>
 
-      <Typography as={'a'} href={'/sing-up'} className={s.signInLink}>
+      <Typography as={'a'} href={'/login'} className={s.signInLink}>
         Sign In
       </Typography>
     </Card>
