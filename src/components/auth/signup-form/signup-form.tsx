@@ -44,7 +44,7 @@ export const SignupForm: FC<Props> = ({ handleSignup }) => {
   const {
     handleSubmit,
     control,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<FormType>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
@@ -63,18 +63,23 @@ export const SignupForm: FC<Props> = ({ handleSignup }) => {
           name={'email'}
           control={control}
           containerProps={{ className: s.textField }}
+          errorMessage={errors.email?.message}
         />
         <ControlledTextField
           label="Password"
           name={'password'}
+          type={'password'}
           control={control}
           containerProps={{ className: s.textField }}
+          errorMessage={errors.password?.message}
         />
         <ControlledTextField
           label="Confirm password"
           name={'confirmPassword'}
+          type={'password'}
           control={control}
           containerProps={{ className: s.textField }}
+          errorMessage={errors.confirmPassword?.message}
         />
 
         <Button type={'signup'} fullWidth className={s.button}>

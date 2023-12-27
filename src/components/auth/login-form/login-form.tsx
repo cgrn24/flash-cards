@@ -22,11 +22,7 @@ const schema = z.object({
     .trim()
     .nonempty('Enter password')
     .min(8, 'Password must be at least 8 characters'),
-  rememberMe: z.literal<boolean>(true, {
-    errorMap: () => {
-      return { message: 'You must agree to the terms and conditions' }
-    },
-  }),
+  rememberMe: z.boolean().default(false),
 })
 
 type FormType = z.infer<typeof schema>
@@ -35,7 +31,7 @@ export const LoginForm: FC<Props> = ({ onSubmit }) => {
   const {
     handleSubmit,
     control,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<FormType>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
@@ -54,12 +50,15 @@ export const LoginForm: FC<Props> = ({ onSubmit }) => {
           name={'email'}
           control={control}
           containerProps={{ className: s.textField }}
+          errorMessage={errors.email?.message}
         />
         <ControlledTextField
           label="Password"
           name={'password'}
+          type={'password'}
           control={control}
           containerProps={{ className: s.textField }}
+          errorMessage={errors.password?.message}
         />
         <ControlledCheckbox
           label={'Remember me'}
