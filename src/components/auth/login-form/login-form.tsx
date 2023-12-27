@@ -16,7 +16,7 @@ type Props = {
 }
 
 const schema = z.object({
-  login: z.string().trim().nonempty('Enter login').min(3, 'Login must be at least 3 characters'),
+  email: z.string().trim().email('Invalid email address').nonempty('Enter email'),
   password: z
     .string()
     .trim()
@@ -27,7 +27,6 @@ const schema = z.object({
       return { message: 'You must agree to the terms and conditions' }
     },
   }),
-  email: z.string().trim().email('Invalid email address').nonempty('Enter email'),
 })
 
 type FormType = z.infer<typeof schema>
@@ -52,7 +51,7 @@ export const LoginForm: FC<Props> = ({ onSubmit }) => {
       <form onSubmit={handleFormSubmit} className={s.form}>
         <ControlledTextField
           label="Email"
-          name={'login'}
+          name={'email'}
           control={control}
           containerProps={{ className: s.textField }}
         />
