@@ -3,20 +3,21 @@ import { FC } from 'react'
 import { Avatar, Typography } from '..'
 import { Logo, Logout, Person } from '../../../assets/icons'
 import Ava from '../../../assets/images/ava.png'
+import { useLogoutMutation, useMeQuery } from '../../../services/auth/auth.service'
+import Button from '../button/button'
 import { Dropdown, DropdownItem, DropdownItemWithIcon } from '../dropdown/dropdown'
 
 import s from './header.module.scss'
 
-type Props = {
-  loggedIn: boolean
-}
+export const Header: FC = () => {
+  const [logout] = useLogoutMutation()
+  const { data } = useMeQuery()
 
-export const Header: FC<Props> = ({ loggedIn = true }) => {
   return (
-    loggedIn && (
-      <div className={s.header}>
-        <div className={s.container}>
-          <Logo />
+    <div className={s.header}>
+      <div className={s.container}>
+        <Logo />
+        {data ? (
           <Dropdown
             trigger={
               <button>
@@ -30,7 +31,6 @@ export const Header: FC<Props> = ({ loggedIn = true }) => {
             }
           >
             <DropdownItem className={s.dropdownItem}>
-              {' '}
               <Avatar src={Ava} size={'36px'} />
               <div>
                 <Typography variant={'subtitle2'}>Ivan</Typography>
@@ -40,10 +40,18 @@ export const Header: FC<Props> = ({ loggedIn = true }) => {
               </div>
             </DropdownItem>
             <DropdownItemWithIcon icon={<Person />} text={'My Profile'}></DropdownItemWithIcon>
-            <DropdownItemWithIcon icon={<Logout />} text={'Sign Out'}></DropdownItemWithIcon>
+            <DropdownItemWithIcon
+              icon={<Logout />}
+              text={'Sign Out'}
+              onClick={() => logout()}
+            ></DropdownItemWithIcon>
           </Dropdown>
-        </div>
+        ) : (
+          <Button as={'a'} href="/login">
+            Sign in
+          </Button>
+        )}
       </div>
-    )
+    </div>
   )
 }
