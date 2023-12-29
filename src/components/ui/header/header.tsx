@@ -23,9 +23,9 @@ export const Header: FC = () => {
               <button>
                 <div className={s.dropdownContainer}>
                   <Typography variant={'subtitle1'} as={'span'} className={s.typographyDecorator}>
-                    Ivan
+                    {data.name}
                   </Typography>
-                  <Avatar src={Ava} size={'36px'} />
+                  <Avatar src={data.avatar || Ava} size={'36px'} />
                 </div>
               </button>
             }
@@ -33,9 +33,9 @@ export const Header: FC = () => {
             <DropdownItem className={s.dropdownItem}>
               <Avatar src={Ava} size={'36px'} />
               <div>
-                <Typography variant={'subtitle2'}>Ivan</Typography>
+                <Typography variant={'subtitle2'}>{data.name}</Typography>
                 <Typography variant={'caption'} className={s.emailText}>
-                  123@456.com
+                  {data.email}
                 </Typography>
               </div>
             </DropdownItem>
