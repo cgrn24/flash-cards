@@ -12,7 +12,7 @@ export const authService = baseApi.injectEndpoints({
         url: `v1/auth/login`,
       }),
     }),
-    me: builder.query<User, void>({
+    me: builder.query<User | null, void>({
       providesTags: ['Me'],
       query: () => `v1/auth/me`,
     }),
@@ -29,6 +29,19 @@ export const authService = baseApi.injectEndpoints({
         method: 'POST',
         url: `v1/auth/logout`,
       }),
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          authService.util.updateQueryData('me', undefined, () => {
+            return null
+          })
+        )
+
+        try {
+          await queryFulfilled
+        } catch {
+          patchResult.undo()
+        }
+      },
     }),
   }),
 })
