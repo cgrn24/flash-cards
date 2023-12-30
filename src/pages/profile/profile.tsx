@@ -18,7 +18,7 @@ export const Profile = () => {
   return (
     <Page>
       {edit === false ? (
-        <ProfileInfo data={data} logout={logout} setEdit={setEdit} />
+        <ProfileInfo data={data} logout={logout} setEdit={setEdit} update={update} />
       ) : (
         <ChangeProfile data={data} setEdit={setEdit} update={update} />
       )}

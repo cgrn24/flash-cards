@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 
 import { Edit, Logout } from '../../../assets/icons/index.ts'
 import Avatar from '../../../assets/images/avabig.png'
@@ -12,9 +12,22 @@ type Props = {
   data: User | null | undefined
   logout: () => void
   setEdit: (edit: boolean) => void
+  update: (args: Partial<Pick<User, 'avatar' | 'name'>>) => void
 }
 
-export const ProfileInfo: FC<Props> = ({ data, logout, setEdit }) => {
+export const ProfileInfo: FC<Props> = ({ data, logout, setEdit, update }) => {
+  const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
+    const avatar = e.target.files?.[0]
+
+    if (!avatar) {
+      return
+    }
+    const formData = new FormData()
+
+    formData.append('avatar', avatar)
+    update(avatar)
+  }
+
   return (
     <Card className={s.card}>
       <Typography variant="large" as={'h1'} className={s.title}>
@@ -24,7 +37,7 @@ export const ProfileInfo: FC<Props> = ({ data, logout, setEdit }) => {
         <div className={s.avatarBlock}>
           <img src={data?.avatar || Avatar} className={s.avatar} />
           <Button variant={'secondary'} as={'a'} className={s.avatarButton}>
-            <input type="file" style={{ display: 'none' }} />
+            <input type="file" style={{ display: 'none' }} onChange={handleSubmit} />
             <Edit />
           </Button>
         </div>
