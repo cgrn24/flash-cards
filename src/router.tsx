@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import { NotFoundPage } from './pages/404/not-found-page'
+import { Profile } from './pages/profile/profile'
 import { SingInPage } from './pages/sign-in-page/sing-in-page'
 import { SignUpPage } from './pages/sign-up-page/sign-up-page'
 import { useMeQuery } from './services/auth/auth.service'
@@ -23,6 +24,10 @@ const publicRoutes: RouteObject[] = [
   {
     path: '/login',
     element: <SingInPage />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
   {
     path: '*',
