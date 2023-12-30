@@ -1,8 +1,11 @@
+import { FC } from 'react'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import Avatar from '../../../assets/images/avabig.png'
+import { User } from '../../../services/auth/auth.types.ts'
 import { Card, Typography } from '../../ui'
 import Button from '../../ui/button/button.tsx'
 import { ControlledTextField } from '../../ui/controlled/controlled-text-field.tsx'
@@ -10,43 +13,51 @@ import { ControlledTextField } from '../../ui/controlled/controlled-text-field.t
 import s from './change-profile.module.scss'
 
 const schema = z.object({
-  nick: z
+  name: z
     .string()
     .trim()
-    .nonempty('Enter password')
+    .nonempty('Enter nickname')
     .min(3, 'Nickname must be at least 3 characters'),
 })
 
 type Form = z.infer<typeof schema>
 
-export const ChangeProfile = () => {
+type Props = {
+  data: User | null | undefined
+  setEdit: (edit: boolean) => void
+  update: (args: Partial<Pick<User, 'avatar' | 'name'>>) => void
+}
+
+export const ChangeProfile: FC<Props> = ({ data, setEdit, update }) => {
   const {
     handleSubmit,
     control,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<Form>({
     resolver: zodResolver(schema),
     mode: 'onSubmit',
   })
 
-  const onSubmit = handleSubmit(data => console.log(data))
+  const onSubmit = handleSubmit(async submitData => {
+    await update(submitData)
+    setEdit(false)
+  })
 
   return (
     <Card className={s.card}>
       <Typography variant="large" as={'h1'} className={s.title}>
-        Create new password
+        Personal infromation
       </Typography>
-      <img src={Avatar} className={s.avatar} />
+      <img src={data?.avatar || Avatar} className={s.avatar} />
       <form onSubmit={onSubmit} className={s.form}>
         <ControlledTextField
           label="Nickname"
-          name={'nick'}
+          name={'name'}
           control={control}
           containerProps={{ className: s.textField }}
+          defaultValue={data?.name}
+          errorMessage={errors.name?.message}
         />
-        <Typography variant="caption" as={'p'} className={s.caption}>
-          Create new password and we will send you further instructions to email
-        </Typography>
         <Button type={'signup'} fullWidth className={s.button}>
           Save changes
         </Button>
