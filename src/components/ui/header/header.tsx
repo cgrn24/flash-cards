@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 import { Avatar, Typography } from '..'
 import { Logo, Logout, Person } from '../../../assets/icons'
 import Ava from '../../../assets/images/ava.png'
@@ -12,6 +14,7 @@ import s from './header.module.scss'
 export const Header: FC = () => {
   const [logout] = useLogoutMutation()
   const { data } = useMeQuery()
+  const navigate = useNavigate()
 
   return (
     <div className={s.header}>
@@ -39,7 +42,11 @@ export const Header: FC = () => {
                 </Typography>
               </div>
             </DropdownItem>
-            <DropdownItemWithIcon icon={<Person />} text={'My Profile'}></DropdownItemWithIcon>
+            <DropdownItemWithIcon
+              icon={<Person />}
+              text={'My Profile'}
+              onClick={() => navigate('/profile')}
+            ></DropdownItemWithIcon>
             <DropdownItemWithIcon
               icon={<Logout />}
               text={'Sign Out'}

@@ -15,8 +15,6 @@ export const Profile = () => {
   const [update] = useUpdateMeMutation()
   const [edit, setEdit] = useState(false)
 
-  console.log(edit)
-
   return (
     <Page>
       {edit === false ? (
