@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent, FC, useRef } from 'react'
 
 import { Edit, Logout } from '../../../assets/icons/index.ts'
 import Avatar from '../../../assets/images/avabig.png'
@@ -16,6 +16,12 @@ type Props = {
 }
 
 export const ProfileInfo: FC<Props> = ({ data, logout, setEdit, update }) => {
+  const ref = useRef<HTMLInputElement | null>(null)
+
+  const handleClick = () => {
+    ref.current?.click()
+  }
+
   const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
     const avatar = e.target.files?.[0]
 
@@ -36,8 +42,14 @@ export const ProfileInfo: FC<Props> = ({ data, logout, setEdit, update }) => {
       <div className={s.avatarWrapper}>
         <div className={s.avatarBlock}>
           <img src={data?.avatar || Avatar} className={s.avatar} />
-          <Button variant={'secondary'} as={'a'} className={s.avatarButton}>
-            <input type="file" style={{ display: 'none' }} onChange={handleSubmit} />
+          <Button variant={'secondary'} className={s.avatarButton} onClick={handleClick}>
+            <input
+              type="file"
+              onChange={handleSubmit}
+              ref={ref}
+              accept=".jpg, .png"
+              style={{ display: 'none' }}
+            />
             <Edit />
           </Button>
         </div>
