@@ -12,7 +12,7 @@ type Props = {
   data: User | null | undefined
   logout: () => void
   setEdit: (edit: boolean) => void
-  update: (args: Partial<Pick<User, 'avatar' | 'name'>>) => void
+  update: (args: Pick<User, 'name'> | FormData) => void
 }
 
 export const ProfileInfo: FC<Props> = ({ data, logout, setEdit, update }) => {
@@ -31,7 +31,7 @@ export const ProfileInfo: FC<Props> = ({ data, logout, setEdit, update }) => {
     const formData = new FormData()
 
     formData.append('avatar', avatar)
-    update(avatar)
+    update(formData)
   }
 
   return (

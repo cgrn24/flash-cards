@@ -24,6 +24,12 @@
   opacity: 0.5;
 }
 
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
 .avatarWrapper {
   display: flex;
   flex-direction: column;
