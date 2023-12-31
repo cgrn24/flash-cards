@@ -16,7 +16,7 @@ export const authService = baseApi.injectEndpoints({
       providesTags: ['Me'],
       query: () => `v1/auth/me`,
     }),
-    updateMe: builder.mutation<User, Partial<Pick<User, 'avatar' | 'name'>>>({
+    updateMe: builder.mutation<User, Pick<User, 'name'> | FormData>({
       query: body => {
         return { url: `v1/auth/me`, method: 'PATCH', body }
       },

@@ -25,7 +25,7 @@ type Form = z.infer<typeof schema>
 type Props = {
   data: User | null | undefined
   setEdit: (edit: boolean) => void
-  update: (args: Partial<Pick<User, 'avatar' | 'name'>>) => void
+  update: (args: Pick<User, 'name'> | FormData) => void
 }
 
 export const ChangeProfile: FC<Props> = ({ data, setEdit, update }) => {
