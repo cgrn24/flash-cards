@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import { NotFoundPage } from './pages/404/not-found-page'
+import { Decks } from './pages/decks/decks'
 import { Profile } from './pages/profile/profile'
 import { SingInPage } from './pages/sign-in-page/sing-in-page'
 import { SignUpPage } from './pages/sign-up-page/sign-up-page'
@@ -26,10 +27,6 @@ const publicRoutes: RouteObject[] = [
     element: <SingInPage />,
   },
   {
-    path: '/profile',
-    element: <Profile />,
-  },
-  {
     path: '*',
     element: <NotFoundPage />,
   },
@@ -38,7 +35,11 @@ const publicRoutes: RouteObject[] = [
 const privateRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <div>hello</div>,
+    element: <Decks />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
 ]
 
