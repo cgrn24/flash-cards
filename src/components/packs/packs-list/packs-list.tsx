@@ -7,6 +7,7 @@ import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
 import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
 
+import { Pack } from './pack/pack'
 import s from './packs-list.module.scss'
 
 export const PacksList = () => {
@@ -14,7 +15,7 @@ export const PacksList = () => {
     { title: 'My Cards', value: 'My Cards' },
     { title: 'All Cards', value: 'All Cards' },
   ]
-  const sliderHandler = () => null
+  const [slider, setSlider] = useState<number[]>([10, 90])
 
   const [sort, onSort] = useState<Sort>()
 
@@ -24,6 +25,19 @@ export const PacksList = () => {
     { key: 'last', title: 'Last Updated', sortable: true },
     { key: 'author', title: 'Created by', sortable: false },
     { key: 'actions', title: '', sortable: false },
+  ]
+
+  const data = [
+    {
+      id: '1',
+      name: 'Pack name',
+      cardsCount: 5,
+      updated: '18.03.2023',
+      author: {
+        id: '123',
+        name: 'Authore',
+      },
+    },
   ]
 
   return (
@@ -40,7 +54,7 @@ export const PacksList = () => {
         </div>
         <div className={s.toolbarLabel}>
           <Typography variant="body2">Number of cards</Typography>
-          <RangeSlider onChange={sliderHandler} value={[10, 90]} max={100} min={0} />
+          <RangeSlider onChange={setSlider} value={slider} max={100} min={0} />
         </div>
         <Button variant={'secondary'}>Clear filter</Button>
       </div>
@@ -48,7 +62,7 @@ export const PacksList = () => {
         <Table>
           <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
           <TableBody>
-            <TableRow>
+            {/* <TableRow>
               <TableCell>Pack Name</TableCell>
               <TableCell>4</TableCell>
               <TableCell>18.03.2023</TableCell>
@@ -60,7 +74,18 @@ export const PacksList = () => {
                   <Trash />
                 </div>
               </TableCell>
-            </TableRow>
+            </TableRow> */}
+            {data.map(el => {
+              return (
+                <Pack
+                  key={el.id}
+                  name={el.name}
+                  cardsCount={el.cardsCount}
+                  updated={el.updated}
+                  author={el.author}
+                />
+              )
+            })}
           </TableBody>
         </Table>
       </div>
