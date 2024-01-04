@@ -39,23 +39,24 @@ export const Select: FC<Props> = ({
     )
   })
 
+  const currentPlaceholder = items[0]
+
   return (
     <div style={style}>
-      {label && (
-        <Typography variant={variant} className={s.label}>
-          {label}
-        </Typography>
-      )}
       <RadixSelect.Root {...{ ...restProps, disabled }}>
+        {label && (
+          <Typography variant={variant} className={s.label}>
+            {label}
+          </Typography>
+        )}
+
         <RadixSelect.Trigger className={s.trigger} data-variant={variant}>
-          <RadixSelect.Value>
-            <Typography
-              as={'div'}
-              variant={variant}
-              className={clsx({ [s.disabled]: disabled })}
-            ></Typography>
+          <Typography as={'p'} variant={variant} className={clsx({ [s.disabled]: disabled })}>
+            <RadixSelect.Value placeholder={currentPlaceholder} />
+          </Typography>
+          <RadixSelect.Icon>
             <Arrow className={clsx(s.arrow, { [s.disabled]: disabled })} />
-          </RadixSelect.Value>
+          </RadixSelect.Icon>
         </RadixSelect.Trigger>
 
         <RadixSelect.Portal>
