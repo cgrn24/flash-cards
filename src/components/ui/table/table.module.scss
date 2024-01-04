@@ -32,9 +32,11 @@
 
 .tableCell {
   padding: 6px 24px;
+
   font-size: var(--font-size-s);
   line-height: var(--line-height-m);
+
   background-color: var(--color-bg-table);
   /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
-  // border-bottom: 1px solid var(--color-dark-500);
+  border-bottom: 1px solid var(--color-dark-500);
 }
