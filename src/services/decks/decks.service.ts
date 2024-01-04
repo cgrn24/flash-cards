@@ -17,3 +17,5 @@ export const decksService = baseApi.injectEndpoints({
     }
   },
 })
+
+export const { useGetDecksQuery } = decksService

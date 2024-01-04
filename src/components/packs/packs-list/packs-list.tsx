@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { Edit, Play, Trash } from '../../../assets/icons'
+import { Deck } from '../../../services/decks/decks.types'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
@@ -10,7 +11,11 @@ import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../
 import { Pack } from './pack/pack'
 import s from './packs-list.module.scss'
 
-export const PacksList = () => {
+type Props = {
+  decks?: Deck[]
+}
+
+export const PacksList: FC<Props> = ({ decks }) => {
   const tabs = [
     { title: 'My Cards', value: 'My Cards' },
     { title: 'All Cards', value: 'All Cards' },
@@ -75,7 +80,7 @@ export const PacksList = () => {
                 </div>
               </TableCell>
             </TableRow> */}
-            {data.map(el => {
+            {decks?.map(el => {
               return (
                 <Pack
                   key={el.id}
