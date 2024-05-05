@@ -1,12 +1,12 @@
 import { FC } from 'react'
 
 import { Edit, Play, Trash } from '../../../../assets/icons'
-import { DeckType } from '../../../../pages/decks/decks'
+import { Deck } from '../../../../services/decks/decks.types'
 import { TableCell, TableRow } from '../../../ui/table'
 
 import s from './pack.module.scss'
 
-type Props = Partial<DeckType>
+type Props = Partial<Deck>
 
 export const Pack: FC<Props> = ({ name, cardsCount, updated, author }) => {
   const onLearn = () => {
@@ -18,12 +18,17 @@ export const Pack: FC<Props> = ({ name, cardsCount, updated, author }) => {
   const onDelete = () => {
     return
   }
+  const date = new Date(updated || '2024-05-05')
+  const day = date.getDate()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  const formattedDate = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`
 
   return (
     <TableRow>
       <TableCell>{name}</TableCell>
       <TableCell>{cardsCount}</TableCell>
-      <TableCell>{updated}</TableCell>
+      <TableCell>{formattedDate}</TableCell>
       <TableCell>{author?.name}</TableCell>
       <TableCell className={s.actionsContainer}>
         <div className={s.actions}>

@@ -17,9 +17,12 @@ type Props = {
 
 export const PacksList: FC<Props> = ({ decks }) => {
   const tabs = [
-    { title: 'My Cards', value: 'My Cards' },
-    { title: 'All Cards', value: 'All Cards' },
+    { title: 'My Cards', value: 'my' },
+    { title: 'All Cards', value: 'all' },
   ]
+
+  const [tabValue, setTabValue] = useState('all')
+
   const [slider, setSlider] = useState<number[]>([10, 90])
 
   const [sort, onSort] = useState<Sort>()
@@ -55,7 +58,7 @@ export const PacksList: FC<Props> = ({ decks }) => {
         <TextField placeholder={'Input search'} type="search" />
         <div className={s.toolbarLabel}>
           <Typography variant="body2">Show packs cards</Typography>
-          <Tabs tabs={tabs} />
+          <Tabs tabs={tabs} value={tabValue} onValueChange={setTabValue} />
         </div>
         <div className={s.toolbarLabel}>
           <Typography variant="body2">Number of cards</Typography>

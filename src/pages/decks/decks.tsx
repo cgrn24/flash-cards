@@ -6,12 +6,9 @@ import { Pagination } from '../../components/ui/pagination/pagination'
 import { useGetDecksQuery } from '../../services/decks/decks.service'
 
 export const Decks = () => {
-  const { data } = useGetDecksQuery()
-
-  console.log(data)
-
-  const [page, setPage] = useState(0)
-  const [perPage, setPerPage] = useState(0)
+  const [page, setPage] = useState(1)
+  const [perPage, setPerPage] = useState(10)
+  const { data } = useGetDecksQuery({ currentPage: page })
 
   return (
     <Page>
@@ -21,7 +18,7 @@ export const Decks = () => {
         count={data?.pagination.totalPages ?? 1}
         page={data?.pagination.currentPage ?? 1}
         onChange={setPage}
-        perPage={10}
+        perPage={perPage}
         onPerPageChange={setPerPage}
       />
     </Page>
