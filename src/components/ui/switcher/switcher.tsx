@@ -42,6 +42,8 @@ export const Tabs: FC<TabsProps> = ({
     trigger: clsx(s.trigger, fullWidth && s.fullWidth),
   }
 
+  console.log(value)
+
   return (
     <TabsRadixUI.Root
       className={classNames.root}

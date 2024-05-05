@@ -1,12 +1,12 @@
 import { FC } from 'react'
 
 import { Edit, Play, Trash } from '../../../../assets/icons'
-import { DeckType } from '../../../../pages/decks/decks'
+import { Deck } from '../../../../services/decks/decks.types'
 import { TableCell, TableRow } from '../../../ui/table'
 
 import s from './pack.module.scss'
 
-type Props = Partial<DeckType>
+type Props = Partial<Deck>
 
 export const Pack: FC<Props> = ({ name, cardsCount, updated, author }) => {
   const onLearn = () => {

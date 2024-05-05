@@ -64,6 +64,10 @@
   }
 }
 
+[data-state='active'] {
+  background: var(--color-accent-500);
+}
+
 .content {
   color: var(--color-dark-900);
 }
