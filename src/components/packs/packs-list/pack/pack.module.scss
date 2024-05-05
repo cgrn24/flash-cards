@@ -1,8 +1,11 @@
-.actionsContainer {
-  width: 127px;
-}
-
 .actions {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
+  width: 125px;
+}
+
+.actionButton {
+  width: 16px;
+  height: 16px;
 }

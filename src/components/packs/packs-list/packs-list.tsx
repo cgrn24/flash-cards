@@ -66,8 +66,8 @@ export const PacksList: FC<Props> = ({ decks }) => {
         </div>
         <Button variant={'secondary'}>Clear filter</Button>
       </div>
-      <div className={s.table}>
-        <Table>
+      <div className={s.tableContainer}>
+        <Table className={s.table}>
           <TableHeader columns={columns} sort={sort} onSort={onSort}></TableHeader>
           <TableBody>
             {/* <TableRow>
