@@ -30,15 +30,15 @@ export const Pack: FC<Props> = ({ name, cardsCount, updated, author }) => {
       <TableCell>{cardsCount}</TableCell>
       <TableCell>{formattedDate}</TableCell>
       <TableCell>{author?.name}</TableCell>
-      <TableCell className={s.actionsContainer}>
+      <TableCell>
         <div className={s.actions}>
-          <button onClick={onLearn}>
+          <button onClick={onLearn} className={s.actionButton}>
             <Play />
           </button>
-          <button onClick={onEdit}>
+          <button onClick={onEdit} className={s.actionButton}>
             <Edit />
           </button>
-          <button onClick={onDelete}>
+          <button onClick={onDelete} className={s.actionButton}>
             <Trash />
           </button>
         </div>
