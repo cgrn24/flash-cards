@@ -8,7 +8,7 @@ import { useGetDecksQuery } from '../../services/decks/decks.service'
 export const Decks = () => {
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(10)
-  const { data } = useGetDecksQuery({ currentPage: page })
+  const { data } = useGetDecksQuery({ currentPage: page, itemsPerPage: perPage })
 
   return (
     <Page>

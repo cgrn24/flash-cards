@@ -11,7 +11,7 @@ type Props = {
 export const Page: FC<Props> = ({ children }) => {
   return (
     <div className={s.page}>
-      <Header loggedIn={true} />
+      <Header />
       {children}
     </div>
   )
