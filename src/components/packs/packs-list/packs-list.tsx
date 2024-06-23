@@ -1,12 +1,11 @@
 import { FC, useState } from 'react'
 
-import { Edit, Play, Trash } from '../../../assets/icons'
 import { Deck } from '../../../services/decks/decks.types'
 import { TextField, Typography } from '../../ui'
 import Button from '../../ui/button/button'
 import { RangeSlider } from '../../ui/slider/slider'
 import { Tabs } from '../../ui/switcher/switcher'
-import { Sort, Table, TableBody, TableCell, TableHeader, TableRow } from '../../ui/table'
+import { Sort, Table, TableBody, TableHeader } from '../../ui/table'
 
 import { Pack } from './pack/pack'
 import s from './packs-list.module.scss'
@@ -33,19 +32,6 @@ export const PacksList: FC<Props> = ({ decks }) => {
     { key: 'last', title: 'Last Updated', sortable: true },
     { key: 'author', title: 'Created by', sortable: false },
     { key: 'actions', title: '', sortable: false },
-  ]
-
-  const data = [
-    {
-      id: '1',
-      name: 'Pack name',
-      cardsCount: 5,
-      updated: '18.03.2023',
-      author: {
-        id: '123',
-        name: 'Authore',
-      },
-    },
   ]
 
   return (

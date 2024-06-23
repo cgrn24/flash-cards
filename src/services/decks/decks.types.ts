@@ -38,4 +38,5 @@ export type GetDecksParams = {
   authorId?: string
   orderBy?: `${Field}-${Direction}`
   currentPage?: number
+  itemsPerPage?: number
 }
